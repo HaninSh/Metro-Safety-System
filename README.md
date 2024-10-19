@@ -6,6 +6,15 @@ This project is part of the Digital Egypt Pioneers Initiatives (DEPI) graduation
 When a person touches or crosses the yellow line, the system triggers an alert to notify security personnel. This enables them to quickly review the situation and take immediate action to prevent potential accidents. By providing real-time awareness of dangerous scenarios, the system aims to reduce accidents and suicides, creating a safer environment for all passengers.
 
 ---
+## Table of Contents
+- [Datasets Used](#datasets-used)
+- [Methodology](#methodology)
+- [Key Features](#key-features)
+- [Flow Chart](#flow-chart)
+- [Sample Output](#sample-output)
+
+
+---
 
 ## Datasets Used
 
@@ -30,13 +39,15 @@ We utilized two YOLO v8m models after testing various models and sizes to achiev
 1. **Yellow Line Detection Model**  
    - Detects the yellow line specifying the danger zone on the platform.  
    - Also detects the railway tracks.
+   - [Download the Model](https://drive.google.com/file/d/1M6GHJ5H20U05_p97rRAC2T-F0R4-eDSa/view?usp=sharing) 
 
 2. **Person Detection Model**  
    - Trained on a well-annotated person dataset to handle complex scenarios accurately.
+   - [Download the Model](https://drive.google.com/file/d/1M6GHJ5H20U05_p97rRAC2T-F0R4-eDSa/view?usp=sharing) 
 
 After obtaining predictions from the models, the following processes are applied:
 
-- **Yellow Line**: We use a hybrid algorithm combining color segmentation, masking, and edge detection within the bounding box area to determine the exact location of the yellow line. This returns the start and end points of the line.
+- **Yellow Line**: We use a hybrid algorithm combining color segmentation and masking, within the bounding box area to determine the exact location of the yellow line. This returns the start and end points of the line.
   
 - **Railway**: This annotation is used to:
   - Detect if a train is present at the station.
@@ -48,16 +59,21 @@ After obtaining predictions from the models, the following processes are applied
 
 ## Key Features
 
-- Handles most cases, aiming to save lives.
-- Supports large masking ranges covering almost every metro platform line color with auto-completion using the start and end points of the line.
-- The project generates multiple types of alerts:
-  - **Red annotations** around persons detected in the danger zone.
-  - **Counter updates** per frame for people detected in the danger zone.
-  - **Flashing red alert** if someone crosses the line.
+- **Handling Unclear Yellow Line Detection:**
+  - A variable saves the last known yellow line coordinates when the line can't be clearly detected.
+- **Comprehensive Masking for Metro Platforms:**
+  - A large masking range is applied to cover most metro platform line colors, with auto-completion using the detected start and end points.
+- **Railway Detection Validation:**
+  - A condition ensures the railway is considered real only if detected in 3 consecutive frames, reducing false positives.
+- **Alert System Output:**
+  - Red Annotation: Persons detected in the danger zone are marked with a red border.
+  - Counter: A counter updates frame by frame, tracking the number of persons in the danger zone.
+---
+## Flow Chart
 
 ---
 
 ## Sample Output
 
-![Example](assets/video.gif)
+![Example](assests/output_video.gif)
 
