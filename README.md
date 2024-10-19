@@ -59,10 +59,5 @@ After obtaining predictions from the models, the following processes are applied
 
 ## Sample Output
 
-<div align="center">
-    <video width="600" controls>
-        <source src="[https://your-username.github.io/your-repo-name/assets/video.mp4" type="video/mp4](https://github.com/HaninSh/Metro-Safety-System/tree/main/assests)">
-        Your browser does not support the video tag.
-    </video>
-</div>
+![Example](assets/video.gif)
 
