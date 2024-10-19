@@ -55,6 +55,10 @@ After obtaining predictions from the models, the following processes are applied
 
 - **Person**: Person detection is critical due to complex scenarios. We apply thresholds and algorithms to accurately identify the foot position of individuals for high accuracy.
 
+![Alt text](assests/Methadology_1.jpg)
+
+![Alt text](assests/Methadology_2.jpg)
+
 ---
 
 ## Key Features
@@ -70,10 +74,14 @@ After obtaining predictions from the models, the following processes are applied
   - Counter: A counter updates frame by frame, tracking the number of persons in the danger zone.
 ---
 ## Flow Chart
+![Alt text](assests/FlowChart.jpg)
 
 ---
 
 ## Sample Output
 
 ![Example](assests/output_video.gif)
+
+
+
 
