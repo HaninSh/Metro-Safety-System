@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Processing App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('assets/images/site-image.jpg'); /* Replace with your image path */
+            background-size: cover; /* Cover the entire screen */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+        }
+        .container {
+            text-align: center; /* Center the text */
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background for readability */
+            padding: 20px;
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333; /* Dark color for better visibility */
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        video {
+            margin-top: 20px;
+            max-width: 90%;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Video Processing App</h1>
+        <input type="text" id="videoLink" placeholder="Enter video link" />
+        <button id="processButton">Process Video</button>
+        <video id="outputVideo" controls></video>
+    </div>
+
+    <script>
+        document.getElementById("processButton").addEventListener("click", async () => {
+            const videoLink = document.getElementById("videoLink").value;
+
+            const formData = new URLSearchParams();
+            formData.append("drive_link", videoLink);
+
+            const response = await fetch("http://20.83.24.19/process-video/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: formData
+            });
+
+            if (response.ok) {
+                const blob = await response.blob();  // Get the video as a Blob
+                const mimeType = response.headers.get("Content-Type");  // Get MIME type from headers
+
+                // Check if the MIME type is correct (should be 'video/mp4')
+                if (mimeType === "video/mp4") {
+                    const url = URL.createObjectURL(blob);
+                    const outputVideo = document.getElementById("outputVideo");
+                    outputVideo.src = url;  // Set the video source to the Blob URL
+                    outputVideo.load();  // Reload the video with the new source
+                    outputVideo.play();  // Optionally autoplay the video
+                } else {
+                    console.error("Unsupported video format or MIME type:", mimeType);
+                    alert("Video format is not supported.");
+                }
+            } else {
+                console.error("Error processing video:", response.statusText);
+                alert("Failed to process video. Please check the link and try again.");
+            }
+        });
+    </script>
+</body>
+</html>
