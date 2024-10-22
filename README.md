@@ -12,6 +12,7 @@ When a person touches or crosses the yellow line, the system triggers an alert t
 - [Key Features](#key-features)
 - [Flow Chart](#flow-chart)
 - [Sample Output](#sample-output)
+- [Documentation](#documentation)
 
 
 ---
