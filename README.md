@@ -79,6 +79,12 @@ After obtaining predictions from the models, the following processes are applied
 
 ![Example](assests/output_video.gif)
 
+## Documentation
+Interested in the project? Checkout more details!
+
+- [Presentation](https://drive.google.com/drive/folders/1CTP7GL4nwLywcukLlpK0KQSVYToG9aAI?usp=sharing)
+- [Report](https://drive.google.com/drive/folders/194bJ089a_wWlBNDJbax_A8bnjd0v3FPf?usp=sharing)
+- [Process of creating virtual machine on azure](https://drive.google.com/drive/folders/1kXDg1Urx6OKXyHZHbJqbYyMaAo08R5oQ?usp=sharing)  
 
 
 
