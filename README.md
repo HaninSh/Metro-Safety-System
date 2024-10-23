@@ -13,6 +13,7 @@ When a person touches or crosses the yellow line, the system triggers an alert t
 - [Flow Chart](#flow-chart)
 - [Sample Output](#sample-output)
 - [Documentation](#documentation)
+- [Team Members](#team-members)
 
 
 ---
@@ -85,7 +86,12 @@ Interested in the project? Checkout more details!
 
 - [Presentation](https://drive.google.com/drive/folders/1CTP7GL4nwLywcukLlpK0KQSVYToG9aAI?usp=sharing)
 - [Report](https://drive.google.com/drive/folders/194bJ089a_wWlBNDJbax_A8bnjd0v3FPf?usp=sharing)
-- [Process of creating virtual machine on azure](https://drive.google.com/drive/folders/1kXDg1Urx6OKXyHZHbJqbYyMaAo08R5oQ?usp=sharing)  
+- [Process of creating virtual machine on azure](https://drive.google.com/drive/folders/1kXDg1Urx6OKXyHZHbJqbYyMaAo08R5oQ?usp=sharing)
+
+## Team Members
+| <img src="https://avatars.githubusercontent.com/u/136843019?v=4" width="100px;"/><br /><sub><b>[Hanin Sherif](https://github.com/HaninSh)</b></sub><br /> | <img src="https://avatars.githubusercontent.com/u/148709604?v=4" width="100px;"/><br /><sub><b>[Ahmed Fawzy](https://github.com/Ahmed-Mohamed-Fawzy)</b></sub><br /> | <img src="https://avatars.githubusercontent.com/u/152033247?v=4" width="100px;"/><br /><sub><b>[Ibrahim Ahmed](https://github.com/Ibrahim2656)</b></sub><br /> |
+| :---: | :---: | :---: |
+| <img src="https://avatars.githubusercontent.com/u/100379234?v=4" width="100px;"/><br /><sub><b>[Ahmed Gabr](https://github.com/AhmedGabr74)</b></sub><br /> | <img src="https://avatars.githubusercontent.com/u/145844759?v=4" width="100px;"/><br /><sub><b>[Mahmoud Elsayes](https://github.com/MahmoudAlsayes)</b></sub><br /> |
 
 
 
